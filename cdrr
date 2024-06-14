@@ -45,4 +45,4 @@ Content-Length: length
       <TestUserAccessResult>boolean</TestUserAccessResult>
     </TestUserAccessResponse>
   </soap12:Body>
-</soap12:Envelope
+</soap12:Envelope>
