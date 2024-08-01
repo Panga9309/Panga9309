@@ -1,0 +1,84 @@
+<xs:element nombre="Orden de compra" tipo="TipoOrden de compra"/>
+
+<xs:element name="regalo">
+ <xs:tipocomplejo>
+  <xs:secuencia>
+   <xs:elemento nombre="cumpleaños" tipo="xs:fecha"/>
+   <xs:element ref="Orden de compra"/>
+  </xs:secuencia>
+ </xs:tipocomplejo>
+</xs:elemento>
+<xs:element name="sin restricciones"/>
+
+<xs:elemento nombre="emptyElt">
+ <xs:tipocomplejo>
+  <xs:atributo ...>. . .</xs:atributo>
+ </xs:tipocomplejo>
+</xs:elemento>
+
+<xs:elemento nombre="contextoUno">
+ <xs:tipocomplejo>
+  <xs:secuencia>
+   <xs:elemento nombre="miElementoLocal" tipo="miPrimerTipo"/>
+   <xs:elemento ref="elemento global"/>
+  </xs:secuencia>
+ </xs:tipocomplejo>
+</xs:elemento>
+<xs:elemento nombre="contextoDos">
+ <xs:tipocomplejo>
+  <xs:secuencia>
+   <xs:elemento nombre="miElementoLocal" tipo="miSegundoTipo"/>
+   <xs:elemento ref="elemento global"/>
+  </xs:secuencia>
+ </xs:tipocomplejo>
+</xs:elemento> 
+<xs:complexType name="cara">
+  <xs:complexContent>
+   <xs:extension base="xs:anotado">
+    <xs:attribute name="valor" uso="obligatorio"/>
+   </xs:extensión>
+  </xs:complexContent>
+ </xs:tipocomplejo>
+
+ <xs:elemento nombre="faceta" tipo="xs:faceta" abstracto="verdadero"/>
+
+ <xs:element name="codificación" substituciónGroup="xs:facet">
+  <xs:tipocomplejo>
+   <xs:complexContent>
+    <xs:restricción base="xs:faceta">
+     <xs:secuencia>
+      <xs:element ref="anotación" minOccurs="0"/>
+     </xs:secuencia>
+     <xs:attribute nombre="valor" tipo="xs:encodings"/>
+    </xs:restricción>
+   </xs:complexContent>
+  </xs:tipocomplejo>
+ </xs:elemento>
+
+ <xs:elemento nombre="periodo" substituciónGroup="xs:facet">
+  <xs:tipocomplejo>
+   <xs:complexContent>
+    <xs:restricción base="xs:faceta">
+     <xs:secuencia>
+      <xs:element ref="anotación" minOccurs="0"/>
+     </xs:secuencia>
+     <xs:attribute nombre="valor" tipo="xs:duración"/>
+    </xs:restricción>
+   </xs:complexContent>
+  </xs:tipocomplejo>
+ </xs:elemento>
+ <xs:complexType name="tipo de datos">
+  <xs:secuencia>
+   <xs:element ref="faceta" minOccurs="0" maxOccurs="ilimitado"/>
+  </xs:secuencia>
+  <xs:attribute name="nombre" tipo="xs:NCName" uso="opcional"/>
+ </xs:tipocomplejo>
+<xs:complexType name="TipoDeOrdenDeCompra">
+  <xs:secuencia>
+   <xs:elemento nombre="enviarA" tipo="DirecciónEstadoUnido"/>
+   <xs:elemento nombre="facturarPara" tipo="USAddress"/>
+   <xs:element ref="comentario" minOccurs="0"/>
+   <xs:element nombre="elementos" tipo="Elementos"/>
+  </xs:secuencia>
+  <xs:attribute nombre="fechaDePedido" tipo="xs:fecha"/>
+ </xs:tipocomplejo>
